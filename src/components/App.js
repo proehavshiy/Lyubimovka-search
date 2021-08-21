@@ -40,6 +40,7 @@ function App() {
           ? acc.push({
             author_firstName: current.author_firstName,
             author_lastName: current.author_lastName,
+            _id: current._id,
           }) : acc;
       return acc;
     }, [])

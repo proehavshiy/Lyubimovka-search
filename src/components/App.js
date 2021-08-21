@@ -1,6 +1,43 @@
 import React from 'react';
+import Form from './Form';
+import DATABASE from '../data/data.json'
+
 
 function App() {
+
+  const [input, setInput] = React.useState('');
+  const [searchResults, setSearchResults] = React.useState(null);
+
+  console.log('searchResults:', searchResults);
+
+  function handleSubmit(evt) {
+    evt.preventDefault();
+    // берет input и выполняет поиск по базе
+    setSearchResults(searchInfo(DATABASE.result, input));
+  }
+
+  function searchInfo(dataArray, key) {
+    if (!Array.isArray(dataArray)) {
+      return;
+    }
+    const searchKey = key.toLowerCase();
+
+    const playsArr = dataArray.reduce((acc, current) => {
+      const check = current.title.toLowerCase().includes(searchKey) ? acc.push(current) : acc;
+      return acc;
+    }, [])
+
+    const authorsArr = dataArray.reduce((acc, current) => {
+      const check = (current.author_firstName.toLowerCase().includes(searchKey) || current.author_lastName.toLowerCase().includes(searchKey)) ? acc.push(current) : acc;
+      return acc;
+    }, [])
+
+    return {
+      plays: playsArr,
+      authors: authorsArr
+    }
+  }
+
   return (
     <div className="page">
       <div className="container">
@@ -8,12 +45,11 @@ function App() {
           <h1 className="header">
             Поиск
           </h1>
-          <form className='search'>
-            <input className='search__input' value='' onChange='' type="text" name="search" placeholder="введите текст" />
-            <button className='submit' type="submit" value="Отправить" aria-label="Кнопка искать">
-              искать
-            </button>
-          </form>
+          <Form
+            input={input}
+            setInput={setInput}
+            onSubmit={handleSubmit}
+          />
         </section>
         <section className="block block__cards">
           <ul className="cards">

@@ -45,9 +45,45 @@ function App() {
       return acc;
     }, [])
 
+    // const AlfaWordsAuthors = authorsArr.map((author) => {
+    //   let arr = []
+    //   let obj = {}
+    //   const firstLetter = author.author_lastName[0];
+    //   obj.firstLetter = author;
+    //   return arr.push(obj)
+    // })
+
+    let data = authorsArr.reduce((r, e) => {
+      // get first letter of name of current element
+      let group = e.author_lastName[0];
+      // if there is no property in accumulator with this letter create it
+      if (!r[group]) r[group] = { group, children: [e] }
+      // if there is push current element to children array for that letter
+      else r[group].children.push(e);
+      // return accumulator
+      return r;
+    }, {})
+
+    const AlfaWordsAuthors = authorsArr.reduce((acc, current) => {
+      // проверка букв на дубли
+      const firstLetter = current.author_lastName[0];
+      // if (acc.find((letter) => {
+      //   return letter[current.author_lastName[0]] === current.author_lastName[0]
+      // })) {
+      //   acc[current.author_lastName[0]].push(current);
+      // }
+      if (!acc[firstLetter]) acc[firstLetter] = current
+      //acc[firstLetter].children.push(current);
+      console.log(acc[firstLetter].children)
+      // acc.push({
+      //   [firstLetter]: current
+      // })
+      return acc;
+    }, {})
+
     return {
       plays: playsArr,
-      authors: authorsArr
+      authors: Object.values(data)
     }
   }
 
@@ -81,17 +117,23 @@ function App() {
           </ul>
         </section>
         <section className="block block__alphabet">
-          <ul className="alphabet">
-            {searchResults !== null &&
-              searchResults.authors.map((author) => {
-                return <AuthorCard
-                  key={author._id}
-                  name={author.author_firstName}
-                  surname={author.author_lastName}
-                />
-              })
-            }
-          </ul>
+          {searchResults !== null &&
+            searchResults.authors.map((letter) => {
+
+              return <ul className="alphabet">
+                <h2 className='alphabet__header'>{letter.group}</h2>
+                {letter.children.map((author) => {
+                  return <AuthorCard
+                    key={author._id}
+                    name={author.author_firstName}
+                    surname={author.author_lastName}
+                  />
+                })
+                }
+              </ul>
+            })
+          }
+
         </section>
       </div>
 

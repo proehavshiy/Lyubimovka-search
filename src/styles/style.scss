@@ -1,0 +1,53 @@
+.text {
+  color: rebeccapurple;
+}
+
+$base-size: 72px;
+
+.text {
+  font-size: $base-size;
+}
+
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+ul, p, h1, h2 {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas:
+  "search ."
+  "cards alphabet";
+}
+
+.block__search {
+  grid-area: search;
+  width: 100%;
+}
+
+.block__cards {
+  grid-area: cards;
+}
+
+.block__alphabet {
+  grid-area: alphabet;
+}
+

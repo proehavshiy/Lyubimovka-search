@@ -1,6 +1,6 @@
 import React from 'react';
 
-function AuthorCard({ name, surname }) {
+function Author({ name, surname }) {
 
   return (
     <li className="nameSurname">
@@ -9,4 +9,4 @@ function AuthorCard({ name, surname }) {
   )
 }
 
-export default AuthorCard;
+export default Author;

@@ -4,8 +4,8 @@ import Author from './Author';
 function uthorsBlock({ literal }) {
 
   return (
-    <ul className="alphabet">
-      <h2 className='alphabet__header'>{literal.group}</h2>
+    <ul className="author-cards">
+      <h2 className='text author-cards__title'>{literal.group}</h2>
       {
         literal.children.map((author) => {
           return <Author

@@ -1,0 +1,14 @@
+.section {
+  &__search {
+    grid-area: search;
+  }
+  &__plays{
+    grid-area: plays;
+  }
+  &__authors{
+    grid-area: authors;
+    @extend %base-padding-margin-settings;
+    display: flex;
+    flex-direction: column;
+  }
+}

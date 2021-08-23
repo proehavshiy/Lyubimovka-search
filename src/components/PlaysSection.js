@@ -4,7 +4,7 @@ import PlaysBlock from './PlaysBlock';
 function PlaysSection({ searchResults }) {
 
   return (
-    <section className="block block__cards">
+    <section className="section section__plays">
       {
         searchResults !== null &&
         <PlaysBlock

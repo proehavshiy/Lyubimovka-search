@@ -1,3 +1,19 @@
-@import  '../vendor/normalize.css', 'style'
+@import  
+'../vendor/normalize.css', 
+'base-settings',
+'./page/page.scss',
+'./container/container.scss',
+'./section/section.scss',
+'./header/header.scss', 
+'./text/text.scss',
+'./play-cards/play-cards.scss',
+'./play-card/play-card.scss',
+'./author-cards/author-cards.scss',
+'./author-card/author-card.scss',
+'./form/form.scss', 
+'./form/form-search.scss', 
+'./submit/submit.scss', 
+'./input/input.scss'
 
+// sass --watch src/styles/index.scss src/styles/style.css
 // sass src/styles/index.scss src/styles/style.css

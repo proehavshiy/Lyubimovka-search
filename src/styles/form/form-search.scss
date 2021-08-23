@@ -1,0 +1,13 @@
+.form-search {
+  display: flex;
+  flex-direction: row;
+  &__input {
+    width: 387px;
+  }
+  &__submit {
+    background-image: url(../images/arrow-right.svg);
+    border-left: 1px solid #242424;
+    background-repeat: no-repeat;
+    background-position: left;
+  }
+}

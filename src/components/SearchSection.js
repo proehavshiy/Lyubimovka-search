@@ -16,7 +16,7 @@ function SearchSection({ input, setInput, searchResults, setSearchResults }) {
           `По запросу «${input}» мы ничего не нашли`
       )
     }
-  }, [searchResults, input])
+  }, [searchResults])
 
 
   function handleSubmit(evt) {
@@ -26,8 +26,8 @@ function SearchSection({ input, setInput, searchResults, setSearchResults }) {
   }
 
   return (
-    <section className="block block__search">
-      <h1 className="header">
+    <section className="section section__search">
+      <h1 className="text header header_margin">
         {headerText}
       </h1>
       <Form

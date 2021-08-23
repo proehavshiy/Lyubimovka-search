@@ -1,0 +1,26 @@
+@use "sass:math";
+
+.container {
+  @extend %base-margin-settings;
+  display: grid;
+  max-width: 1440px;
+  // grid-template-columns: repeat(2, 1fr);
+  //grid-template-columns: 2fr, 1fr;
+  //grid-template-columns: repeat(auto-fit,1fr);
+  grid-template-columns: 778px max-content;
+  // grid-template-columns: minmax(min-content, max-content), math.div((1319px-94px-780px),1319px)*100%;
+  //grid-template-columns: minmax(min-content, (math.div(780px,1319px)*100%)) 1fr;
+  //grid-template-columns: minmax(min-content, max-content), 1fr;
+  //grid-template-columns: repeat(auto-fit,minmax(282px,max-content));
+  //grid-template-columns: repeat(3, 300px), minmax(min-content, max-content);
+  // justify-content: center;
+  justify-items: start;
+  justify-content: start;
+  grid-template-areas:
+  "search ."
+  "plays authors";
+  column-gap: 94px;
+  row-gap: 65px;
+  // row-gap: 66px;
+  
+}

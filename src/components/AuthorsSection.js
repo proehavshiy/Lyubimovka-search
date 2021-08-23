@@ -4,7 +4,7 @@ import AuthorsBlock from './AuthorsBlock';
 function AuthorsSection({ searchResults }) {
 
   return (
-    <section className="block block__alphabet">
+    <section className="section section__authors">
       {
         searchResults !== null &&
         searchResults.authors.map((literal) => {

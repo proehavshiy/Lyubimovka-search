@@ -9,6 +9,7 @@ function App() {
   const [input, setInput] = React.useState('');
   const [searchResults, setSearchResults] = React.useState(null);
 
+  console.log('searchResults:', searchResults);
   return (
     <div className="page">
       <div className="container">

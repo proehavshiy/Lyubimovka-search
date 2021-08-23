@@ -4,7 +4,7 @@ import PlayCard from './PlayCard';
 function PlaysBlock({ plays }) {
 
   return (
-    <ul className="cards">
+    <ul className="play-cards">
       {
         plays.map((play) => {
           return (

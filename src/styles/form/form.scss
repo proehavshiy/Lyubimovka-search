@@ -1,0 +1,9 @@
+.form {
+  @extend %box-sizing;
+    border-radius: none;
+    background: transparent;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 128%;
+    font-feature-settings: 'ss01' on;
+}

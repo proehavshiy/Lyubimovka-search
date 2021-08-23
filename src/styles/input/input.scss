@@ -1,0 +1,13 @@
+.input {
+  @extend %base-padding-margin-settings;
+  display: block;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #242424;
+  font-family: inherit;
+  font-style: inherit;
+  color: inherit;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 128%;
+}

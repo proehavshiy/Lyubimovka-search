@@ -15,15 +15,18 @@
   color: #242424;
 }
 
-.container {
-  margin-top: 13.125%;
-  margin-left: 8.4%;
-  margin-right: 8.4%;
+.page {
+  background-color: #E5E5E5;
+  min-width: 320px;
+  min-height: 100vh;
 }
 
 .container {
+  margin: 0 auto;
+  max-width: 83.194%;
+  padding-top: 13.125%;
+  padding-bottom: 13.125%;
   display: grid;
-  max-width: 1440px;
   grid-template-columns: 778px max-content;
   justify-items: start;
   justify-content: start;
@@ -57,8 +60,8 @@
 .play-cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  column-gap: 3.7179487179%;
-  row-gap: 3.7179487179%;
+  column-gap: 29px;
+  row-gap: 29px;
   list-style: none;
 }
 
@@ -130,9 +133,13 @@
 .form-search {
   display: flex;
   flex-direction: row;
+  background-color: #E5E5E5;
 }
 .form-search__input {
   width: 387px;
+}
+.form-search__input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px #E5E5E5 inset;
 }
 .form-search__submit {
   background-image: url(../images/arrow-right.svg);
@@ -157,6 +164,7 @@
   border: none;
   outline: none;
   border-bottom: 1px solid #242424;
+  background-color: inherit;
   font-family: inherit;
   font-style: inherit;
   color: inherit;

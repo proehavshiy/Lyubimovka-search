@@ -1,9 +1,13 @@
 .form-search {
   display: flex;
   flex-direction: row;
+  background-color: #E5E5E5;
   &__input {
     width: 387px;
   }
+  &__input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #E5E5E5 inset;
+}
   &__submit {
     background-image: url(../images/arrow-right.svg);
     border-left: 1px solid #242424;

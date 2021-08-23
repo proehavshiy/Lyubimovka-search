@@ -1,10 +1,8 @@
-@use "sass:math";
-
 .play-cards {
   @extend %base-padding-margin-settings;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  column-gap: math.div(29px,780px)*100%;
-  row-gap: math.div(29px,780px)*100%;
+  column-gap: 29px;
+  row-gap: 29px;
   list-style: none;
 }

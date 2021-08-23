@@ -1,9 +1,14 @@
 @use "sass:math";
 
 .container {
-  @extend %base-margin-settings;
+  margin: 0 auto;
+  max-width: 83.194%;
+  padding-top: 13.125%;
+  padding-bottom: 13.125%;
   display: grid;
-  max-width: 1440px;
+  
+  // max-width: 1440px;
+  // min-height: 100vw;
   // grid-template-columns: repeat(2, 1fr);
   //grid-template-columns: 2fr, 1fr;
   //grid-template-columns: repeat(auto-fit,1fr);

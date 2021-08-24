@@ -1,7 +1,7 @@
 .play-cards {
   @extend %base-padding-margin-settings;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, 240px);
   column-gap: 29px;
   row-gap: 29px;
   list-style: none;

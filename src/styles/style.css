@@ -27,7 +27,7 @@
   padding-top: 13.125%;
   padding-bottom: 13.125%;
   display: grid;
-  grid-template-columns: 778px max-content;
+  grid-template-columns: minmax(min-content, max-content) minmax(min-content, max-content);
   justify-items: start;
   justify-content: start;
   grid-template-areas: "search ." "plays authors";
@@ -35,20 +35,53 @@
   row-gap: 65px;
 }
 
+@media screen and (max-width: 1250px) {
+  .container {
+    grid-template-columns: minmax(min-content, max-content);
+    grid-template-areas: "search" "plays" "authors";
+  }
+}
 .section__search {
   grid-area: search;
+  min-width: 507px;
+}
+@media screen and (max-width: 940px) {
+  .section__search {
+    max-width: 509px;
+  }
 }
 .section__plays {
   grid-area: plays;
+  min-width: 778px;
 }
 .section__authors {
   grid-area: authors;
+  width: 100%;
   display: flex;
   flex-direction: column;
 }
+@media screen and (max-width: 1250px) {
+  .section__authors {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, max-content));
+    column-gap: 29px;
+    row-gap: 29px;
+  }
+}
+@media screen and (max-width: 1250px) and (max-width: 940px) {
+  .section__authors {
+    max-width: 509px;
+  }
+}
 
+@media screen and (max-width: 940px) {
+  .section {
+    min-width: 509px;
+  }
+}
 .header {
-  width: 740px;
+  max-width: 740px;
+  min-width: 100%;
   font-size: 56px;
   line-height: 100%;
   letter-spacing: -0.01em;
@@ -59,7 +92,7 @@
 
 .play-cards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, 240px);
   column-gap: 29px;
   row-gap: 29px;
   list-style: none;
@@ -104,6 +137,7 @@
   margin-bottom: 61px;
 }
 .author-cards__title {
+  margin-bottom: 14px;
   font-size: 40px;
   line-height: 100%;
   letter-spacing: -0.01em;
@@ -113,6 +147,9 @@
   margin-bottom: 0;
 }
 
+.author-card {
+  margin-bottom: 12px;
+}
 .author-card__content {
   font-weight: 300;
   font-size: 20px;
@@ -121,7 +158,12 @@
   font-feature-settings: "ss01" on;
 }
 
+.author-card:last-of-type {
+  margin-bottom: 0px;
+}
+
 .form {
+  height: 31px;
   border-radius: none;
   background: transparent;
   font-weight: 300;
@@ -131,12 +173,14 @@
 }
 
 .form-search {
+  width: 507px;
   display: flex;
   flex-direction: row;
   background-color: #E5E5E5;
 }
 .form-search__input {
-  width: 387px;
+  max-width: 387px;
+  min-width: 76.331%;
 }
 .form-search__input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0px 1000px #E5E5E5 inset;

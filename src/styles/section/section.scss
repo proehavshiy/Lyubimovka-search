@@ -1,14 +1,42 @@
 .section {
   &__search {
     grid-area: search;
+    min-width: 507px;
+  }
+  @media screen and (max-width: 940px) {
+    &__search{
+      max-width: 509px;
+    }
   }
   &__plays{
     grid-area: plays;
+    min-width: 778px;
   }
   &__authors{
     grid-area: authors;
     @extend %base-padding-margin-settings;
+    width: 100%;
     display: flex;
     flex-direction: column;
   }
+  @media screen and (max-width: 1250px) {
+    &__authors{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, max-content));
+      column-gap: 29px;
+      row-gap: 29px;
+    }
+    @media screen and (max-width: 940px) {
+      &__authors{
+        max-width: 509px;
+      }
+    }
+  }
 }
+
+@media screen and (max-width: 940px) {
+    .section{
+      min-width: 509px;
+    }
+  }
+

@@ -1,9 +1,11 @@
 .form-search {
+  width: 507px;
   display: flex;
   flex-direction: row;
   background-color: #E5E5E5;
   &__input {
-    width: 387px;
+    max-width: 387px;
+    min-width: 76.331%;
   }
   &__input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0px 1000px #E5E5E5 inset;

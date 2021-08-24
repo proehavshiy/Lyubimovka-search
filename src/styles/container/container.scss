@@ -6,19 +6,7 @@
   padding-top: 13.125%;
   padding-bottom: 13.125%;
   display: grid;
-  
-  // max-width: 1440px;
-  // min-height: 100vw;
-  // grid-template-columns: repeat(2, 1fr);
-  //grid-template-columns: 2fr, 1fr;
-  //grid-template-columns: repeat(auto-fit,1fr);
-  grid-template-columns: 778px max-content;
-  // grid-template-columns: minmax(min-content, max-content), math.div((1319px-94px-780px),1319px)*100%;
-  //grid-template-columns: minmax(min-content, (math.div(780px,1319px)*100%)) 1fr;
-  //grid-template-columns: minmax(min-content, max-content), 1fr;
-  //grid-template-columns: repeat(auto-fit,minmax(282px,max-content));
-  //grid-template-columns: repeat(3, 300px), minmax(min-content, max-content);
-  // justify-content: center;
+  grid-template-columns: minmax(min-content, max-content) minmax(min-content, max-content);
   justify-items: start;
   justify-content: start;
   grid-template-areas:
@@ -27,4 +15,14 @@
   column-gap: 94px;
   row-gap: 65px;
   
+}
+
+@media screen and (max-width: 1250px) {
+  .container {
+    grid-template-columns: minmax(min-content, max-content);
+    grid-template-areas:
+    "search"
+    "plays"
+    "authors";
+  }
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import Form from './Form';
-import DATABASE from '../data/data.json';
+import { result as dataBase } from '../data/data.json';
 import searchInfo from '../hooks/searchInfo';
 
 function SearchSection({ input, setInput, searchResults, setSearchResults }) {
@@ -12,8 +12,8 @@ function SearchSection({ input, setInput, searchResults, setSearchResults }) {
       setHeaderText(
         searchResults.plays.length &&
           searchResults.authors.length !== 0 ?
-          `По запросу «${input}» мы нашли` :
-          `По запросу «${input}» мы ничего не нашли`
+          `По запросу «${input.trim()}» мы нашли` :
+          `По запросу «${input.trim()}» мы ничего не нашли`
       )
     }
   }, [searchResults])
@@ -22,7 +22,7 @@ function SearchSection({ input, setInput, searchResults, setSearchResults }) {
   function handleSubmit(evt) {
     evt.preventDefault();
     // берет input и выполняет поиск по базе
-    setSearchResults(searchInfo(DATABASE.result, input));
+    setSearchResults(searchInfo(dataBase, input === ' ' ? null : input.trim()));
   }
 
   return (

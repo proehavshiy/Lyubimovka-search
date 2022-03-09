@@ -3,7 +3,7 @@ function searchInfo(dataArray, key) {
     return;
   }
 
-  const searchKey = key.toLowerCase();
+  const searchKey = key ? key.toLowerCase() : null;
 
   // поиск пьес
   const plays = dataArray.reduce((acc, current) => {
@@ -12,10 +12,17 @@ function searchInfo(dataArray, key) {
   }, [])
 
   // поиск авторов
+  const countedAuthors = {}
+
   const authors = dataArray.reduce((acc, current) => {
-    // проверка авторов на дубли
-    if (acc.find((item) => item.author_firstName === current.author_firstName || item.author_lastName === current.author_lastName)) return acc;
-    if (current.author_firstName.toLowerCase().includes(searchKey) || current.author_lastName.toLowerCase().includes(searchKey)) {
+    const author = `${current.author_firstName} ${current.author_lastName}`.toLowerCase();
+
+    // избавляемся от дубликатов в авторах
+    if (countedAuthors[author]) return acc
+    if (!countedAuthors[author]) countedAuthors[author] = 1
+
+    // добавляем подходящих под запрос авторов без дублей
+    if (author.includes(searchKey)) {
       acc.push({
         author_firstName: current.author_firstName,
         author_lastName: current.author_lastName,

@@ -1,7 +1,7 @@
 import React from 'react';
 import Author from './Author';
 
-function uthorsBlock({ literal }) {
+function AuthorsBlock({ literal }) {
 
   return (
     <ul className="author-cards">
@@ -19,4 +19,4 @@ function uthorsBlock({ literal }) {
   )
 }
 
-export default uthorsBlock;
+export default AuthorsBlock;
